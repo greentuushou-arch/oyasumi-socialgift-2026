@@ -1,0 +1,307 @@
+/* 枕と眠りのおやすみショップ ソーシャルギフト特集
+   ロゴの紺を夜空に、三日月の黄を差し色に。夜に贈って朝に返事が届く流れで、
+   ページの終わりに向かって空が明けていく。文字は Noto Sans JP + Jost。 */
+:root{
+  --night:#132a4d;
+  --navy:#1e3f6b;
+  --navy-soft:#2c5488;
+  --moon:#f7d774;
+  --moon-deep:#c98f1a;
+  --moon-pale:#fff6d9;
+  --cream:#fbf7ec;
+  --dawn:#f5b98c;
+  --ink:#1d2f4a;
+  --sub:#52627a;
+  --line:#e4dfd0;
+  --white:#fff;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:17px;line-height:1.8;font-weight:400;color:var(--ink);background:var(--white);
+  font-feature-settings:"palt";overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+ul,ol{list-style:none}
+h1,h2,h3{font-weight:600;line-height:1.4;letter-spacing:.02em}
+.en-num{font-family:"Jost",sans-serif;font-weight:600}
+.btn.pc{display:none}
+
+br.sp{display:inline}
+
+/* ボタン */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:.7em;
+  width:100%;max-width:440px;min-height:64px;margin-inline:auto;padding:.7em 1.4em;
+  background:var(--navy);color:var(--white);border-radius:12px;
+  font-size:19px;font-weight:700;text-decoration:none;
+  transition:transform .25s var(--ease),background .25s;
+}
+.btn::after{content:"";width:0;height:0;border-left:8px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.btn:hover{background:var(--night);transform:translateY(-2px)}
+.btn-line{background:var(--white);color:var(--navy);border:2px solid var(--navy)}
+.btn-line:hover{background:var(--moon-pale)}
+.btn-moon{background:var(--moon);color:var(--night)}
+.btn-moon:hover{background:#ffe59a}
+
+/* キャンペーン帯 */
+.event{background:var(--moon);color:var(--night);padding:12px 16px}
+.event-inner{max-width:1080px;margin:0 auto;display:grid;gap:8px}
+.event-name{font-size:14px;font-weight:500;line-height:1.5}
+.event-name b{display:block;font-size:21px;font-weight:700}
+.event-name .en-num{font-size:27px;margin:0 2px}
+.event-foot{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.event-date{font-size:14px;font-weight:500;line-height:1.45}
+.event-date span{display:block}
+.event-left{font-size:14px;white-space:nowrap}
+.event-left b{font-family:"Jost",sans-serif;font-size:17px;font-weight:600;margin:0 1px}
+.cd-label{margin-right:5px}
+.event-btn{
+  flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;
+  background:var(--night);color:var(--white);border-radius:8px;
+  font-size:15px;font-weight:700;text-decoration:none;
+}
+
+/* FV: 夜空 */
+.fv{
+  position:relative;overflow:hidden;color:var(--white);
+  background:linear-gradient(180deg,var(--night) 0%,var(--navy) 100%);
+  padding:0 16px 56px;
+}
+.stars{position:absolute;inset:0;pointer-events:none}
+.stars i{position:absolute;border-radius:50%;background:var(--moon-pale);animation:twinkle 4.2s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:.95}}
+.top{position:relative;padding:18px 0 0;max-width:1080px;margin:0 auto}
+.top img{height:84px;width:auto}
+.fv-inner{position:relative;max-width:1080px;margin:0 auto;padding-top:36px}
+.fv h1{font-size:clamp(35px,10.2vw,64px);line-height:1.34;letter-spacing:0}
+.fv-lead{margin-top:18px;font-size:20px;line-height:1.6;font-weight:500}
+
+/* 満月をポイントのコインに見立てる */
+.moon-coin{
+  flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:136px;height:136px;border-radius:50%;
+  background:radial-gradient(circle at 36% 30%,#ffefb4 0%,var(--moon) 62%,#efc04f 100%);
+  color:var(--night);
+}
+.moon-coin b{font-size:50px;line-height:1;letter-spacing:0}
+.moon-coin span{font-size:15px;font-weight:700;line-height:1.4}
+.deal{display:flex;align-items:center;gap:16px;margin-top:26px}
+.deal-text b{display:block;font-size:24px;font-weight:600;line-height:1.4}
+.deal-text span{display:block;margin-top:6px;font-size:14px;line-height:1.55;color:#d7e2f2}
+
+/* スマホ(夜のトーク画面) */
+.fv-stage{position:relative;margin:40px auto 0;max-width:330px}
+.phone{
+  position:relative;width:100%;height:430px;overflow:hidden;
+  background:#0d1e38;border:7px solid #0a1729;border-radius:30px;
+}
+.phone-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:12px 16px;background:#16294a;color:var(--white);font-size:15px;font-weight:600;
+}
+.phone-head time{font-family:"Jost",sans-serif;font-size:14px;color:#c9d6ea;font-weight:500}
+.phone-chat{display:flex;flex-direction:column;gap:10px;padding:14px 12px}
+.msg{max-width:84%;padding:9px 13px;border-radius:15px;font-size:15px;line-height:1.5;animation:pop .4s var(--ease) both}
+.msg-me{align-self:flex-end;background:var(--moon);color:var(--night);border-bottom-right-radius:4px}
+.msg-you{align-self:flex-start;background:#26406a;color:var(--white);border-bottom-left-radius:4px}
+.msg-gift{align-self:flex-end;width:76%;overflow:hidden;background:var(--white);color:var(--ink);border-radius:13px;animation:pop .4s var(--ease) both}
+.msg-gift img{width:100%;height:112px;object-fit:cover}
+.msg-gift p{padding:7px 10px 2px;font-size:13px;line-height:1.45;font-weight:500}
+.msg-gift span{display:block;margin:4px 10px 10px;padding:4px;text-align:center;background:var(--navy);color:var(--white);border-radius:6px;font-size:13px;font-weight:700}
+.typing{align-self:flex-end;display:flex;gap:4px;padding:11px 13px;background:var(--moon);border-radius:15px;border-bottom-right-radius:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--night);animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.fv-sheep{position:absolute;left:-22px;bottom:-24px;width:112px;height:93px}
+
+/* なぜ枕なのか */
+.why{background:var(--navy);color:var(--white);padding:72px 16px 80px}
+.why-inner{max-width:880px;margin:0 auto}
+.why h2{font-size:clamp(32px,8.8vw,52px);line-height:1.42}
+.why ol{margin-top:48px;display:grid;gap:40px}
+.why li{display:grid;grid-template-columns:48px 1fr;gap:14px}
+.why li>.en-num{font-size:46px;line-height:1;color:var(--moon)}
+.why h3{font-size:25px;line-height:1.45;color:var(--moon)}
+.why li p{margin-top:10px}
+.why a{color:var(--moon)}
+
+/* 商品 */
+.items{background:var(--cream);padding:72px 16px 80px}
+.items-inner{max-width:1080px;margin:0 auto}
+.items-title{font-size:clamp(31px,8.4vw,50px);line-height:1.42}
+.group{margin-top:52px}
+.group-head h3{font-size:26px;line-height:1.4;color:var(--navy)}
+.group-head h3 br{display:none}
+.group-head p{margin-top:6px;color:var(--sub)}
+.item-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 12px;margin-top:22px}
+.item{margin-bottom:26px}
+.item{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0;text-decoration:none;min-width:0}
+.item-say{
+  display:flex;align-items:center;min-height:62px;margin-bottom:10px;
+  padding:8px 12px;background:var(--navy);color:var(--white);border-radius:12px 12px 3px 12px;
+  font-size:15px;line-height:1.45;font-weight:500;
+}
+.item-img{overflow:hidden;border-radius:8px;background:var(--white)}
+.item-img img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .5s var(--ease)}
+.item:hover .item-img img{transform:scale(1.03)}
+.item-name{margin-top:10px;font-size:17px;font-weight:600;line-height:1.45}
+.item-sub{font-size:14px;line-height:1.5;color:var(--sub)}
+.item-price{margin-top:2px;font-size:15px}
+.item-price b{font-family:"Jost",sans-serif;font-size:27px;font-weight:600;color:var(--navy);margin-right:1px}
+.items .btn-line{margin-top:52px}
+
+/* カタログギフト */
+.catalog{background:var(--night);color:var(--white);padding:72px 16px}
+.catalog-inner{max-width:1000px;margin:0 auto;display:grid;gap:32px}
+.catalog-img{display:block}
+.catalog-img img{width:100%;border-radius:10px}
+.catalog h2{font-size:clamp(30px,8.2vw,44px);line-height:1.42}
+.catalog-num{margin:18px 0 12px;font-size:23px;font-weight:600;line-height:1.5;color:var(--moon)}
+.catalog-num b{font-size:64px;line-height:1;margin-right:4px}
+.catalog ul{margin:20px 0 26px;border-top:1px solid #3b5a86}
+.catalog li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid #3b5a86}
+.catalog li b{font-weight:500;color:#d7e2f2}
+.catalog li .en-num{font-size:25px}
+.catalog li small{font-size:14px}
+
+/* 500ポイント */
+.point{background:var(--moon-pale);padding:72px 16px 80px}
+.point-inner{max-width:920px;margin:0 auto}
+.point h2{font-size:clamp(31px,8.6vw,50px);line-height:1.4}
+.point h2 .en-num{font-size:1.5em;color:var(--navy);margin-right:3px}
+.point-lead{margin-top:14px;font-size:18px}
+.flow{display:grid;gap:10px;margin-top:36px}
+.flow li{display:flex;align-items:center;gap:14px;font-size:19px}
+.flow li b{font-weight:600}
+.flow>li:not(.flow-goal){padding:12px 16px;background:var(--white);border-radius:10px}
+.flow>li>.en-num{font-size:25px;color:var(--moon-deep);width:18px}
+.flow-goal{justify-content:center;gap:16px;padding-top:12px}
+.flow-goal .moon-coin{width:128px;height:128px}
+.flow-goal>b{font-size:22px}
+.cond{margin-top:44px}
+.cond h3{font-size:26px}
+.cond ul{margin-top:14px;border-top:1px solid #e9d9a4}
+.cond li{padding:13px 0;border-bottom:1px solid #e9d9a4}
+.cond li b{display:block;font-size:19px;font-weight:600;line-height:1.5}
+.cond li span{font-size:15px;color:var(--sub)}
+.point .btn{margin-top:36px}
+
+/* 贈り方 */
+.steps{padding:72px 16px 80px;background:var(--white)}
+.steps-inner{max-width:920px;margin:0 auto}
+.steps h2{font-size:clamp(31px,8.6vw,48px);line-height:1.4}
+.steps-head p{margin-top:12px;font-size:18px}
+.step-list{margin-top:36px;display:grid;gap:28px}
+.step-list li{display:grid;grid-template-columns:56px 1fr;gap:12px}
+.step-list li>.en-num{font-size:48px;line-height:1;color:var(--navy)}
+.step-list b{display:block;font-size:21px;font-weight:600;line-height:1.5}
+.step-list p{margin-top:4px}
+.text-link{display:inline-block;margin-top:32px;color:var(--navy);font-weight:500}
+
+/* 締め: 夜明け */
+.close{
+  position:relative;overflow:hidden;padding:88px 16px 120px;text-align:center;
+  background:linear-gradient(180deg,var(--navy) 0%,#6d7fa6 22%,var(--dawn) 56%,var(--moon-pale) 100%);
+}
+.close-inner{position:relative;max-width:720px;margin:0 auto}
+.close-chat{display:inline-block;text-align:left;color:var(--white)}
+.close-chat time{display:block;margin-bottom:6px;font-family:"Jost",sans-serif;font-size:17px;font-weight:500}
+.close-chat p{padding:12px 18px;background:var(--white);color:var(--ink);border-radius:16px 16px 16px 4px;font-size:19px;line-height:1.55;font-weight:500}
+.close h2{margin-top:56px;font-size:clamp(30px,8.2vw,48px);line-height:1.42;color:var(--night)}
+.close h2+p{margin:14px 0 24px;color:var(--night);font-weight:500}
+.close-sheep{position:absolute;right:-6px;bottom:-96px;width:92px;height:77px}
+
+/* 注意事項 */
+.notes{background:var(--cream);padding:52px 16px}
+.notes-inner{max-width:880px;margin:0 auto}
+.notes h2{font-size:22px}
+.notes ul{margin-top:12px}
+.notes li{position:relative;padding-left:1em;font-size:15px;line-height:1.7;color:var(--sub)}
+.notes li+li{margin-top:7px}
+.notes li::before{content:"・";position:absolute;left:0}
+
+.foot{background:var(--night);color:var(--white);padding:38px 16px 96px;text-align:center}
+.foot img{height:88px;width:auto;margin:0 auto}
+.foot p{margin-top:8px;font-size:14px}
+
+/* 追従ボタン */
+.float-cta{
+  position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:20;
+  display:flex;align-items:center;justify-content:center;min-height:54px;
+  background:var(--moon);color:var(--night);border-radius:12px;
+  font-size:18px;font-weight:700;text-decoration:none;
+  opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s var(--ease);
+}
+.float-cta.show{opacity:1;pointer-events:auto;transform:none}
+
+/* 出現 */
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (min-width:860px){
+  br.sp{display:none}
+  .btn.pc{display:flex;margin:30px 0 0}
+  .event{padding:12px 24px}
+  .event-inner{grid-template-columns:1fr auto;align-items:center}
+  .event-foot{gap:22px}
+  .event-date{text-align:right}
+  .fv{padding:0 24px 88px}
+  .top img{height:96px}
+  .fv-inner{display:grid;grid-template-columns:1fr 340px;gap:56px;align-items:center;padding-top:44px}
+  .fv-lead{font-size:23px}
+  .moon-coin{width:158px;height:158px}
+  .moon-coin b{font-size:58px}
+  .deal-text b{font-size:27px}
+  .deal-text span{font-size:16px}
+  .fv-stage{margin:0;max-width:none}
+  .phone{height:470px}
+  .fv-sheep{left:-58px;width:132px;height:110px}
+
+  .why{padding:112px 24px}
+  .why ol{gap:48px}
+  .why li{grid-template-columns:76px 1fr}
+  .why li>.en-num{font-size:62px}
+  .why h3{font-size:29px}
+
+  .items{padding:112px 24px}
+  .group{display:grid;grid-template-columns:230px 1fr;gap:36px;margin-top:80px;align-items:start}
+  .group-head{position:sticky;top:28px}
+  .group-head h3{font-size:29px}
+  .group-head h3 br{display:inline}
+  .item-grid{grid-template-columns:repeat(3,1fr);gap:0 20px;margin-top:0}
+  .item{margin-bottom:34px}
+  .item-say{font-size:16px}
+
+  .catalog{padding:112px 24px}
+  .catalog-inner{grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .catalog .btn{margin:0}
+
+  .point{padding:112px 24px}
+  .flow{grid-template-columns:repeat(3,1fr) auto;align-items:center;gap:12px}
+  .flow>li:not(.flow-goal){flex-direction:column;align-items:flex-start;gap:4px;height:100%;font-size:18px}
+  .flow-goal{flex-direction:column;gap:6px;padding-top:0}
+  .flow-goal>b{font-size:19px}
+  .cond{display:grid;grid-template-columns:260px 1fr;gap:32px}
+  .cond ul{margin-top:0}
+
+  .steps{padding:112px 24px}
+  .step-list{grid-template-columns:repeat(3,1fr);gap:28px}
+  .step-list li{grid-template-columns:1fr;gap:10px}
+
+  .close{padding:130px 24px 170px}
+  .close-sheep{right:12%;width:120px;height:100px}
+  .float-cta{left:auto;right:24px;bottom:24px;width:300px}
+  .foot{padding-bottom:42px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .stars i,.msg,.msg-gift,.typing i{animation:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+}
