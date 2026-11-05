@@ -111,7 +111,7 @@ br.sp{display:inline}
 /* スマホ(夜のトーク画面) */
 .fv-stage{position:relative;margin:40px auto 0;max-width:330px}
 .phone{
-  position:relative;width:100%;height:430px;overflow:hidden;
+  position:relative;width:100%;height:474px;overflow:hidden;
   background:#0d1e38;border:7px solid #0a1729;border-radius:30px;
 }
 .phone-head{
@@ -282,7 +282,7 @@ br.sp{display:inline}
   .deal-text b{font-size:27px}
   .deal-text span{font-size:16px}
   .fv-stage{margin:0;max-width:none}
-  .phone{height:470px}
+  .phone{height:500px}
   .fv-sheep{left:-58px;width:132px;height:110px}
 
   .why{padding:112px 24px}
