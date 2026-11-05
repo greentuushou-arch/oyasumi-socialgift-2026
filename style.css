@@ -84,7 +84,7 @@ br.sp{display:inline}
 .fv{
   position:relative;overflow:hidden;color:var(--white);
   background:linear-gradient(180deg,var(--night) 0%,var(--navy) 100%);
-  padding:0 16px 56px;
+  padding:0 16px 56px;box-shadow:0 2px 0 var(--navy);
 }
 .stars{position:absolute;inset:0;pointer-events:none}
 .stars i{position:absolute;border-radius:50%;background:var(--moon-pale);animation:twinkle 4.2s ease-in-out infinite}
